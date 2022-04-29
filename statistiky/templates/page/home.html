@@ -1,28 +1,13 @@
-
-<!DOCTYPE html>
-{% load tailwind_tags %}
-{% load sass_tags %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Health Tracker</title>
-    {% tailwind_preload_css %}
-    {% tailwind_css %}
+{% extends "components/main.html" %}
+{% block content %}
     {% load static %}
-    <link href="{% sass_src 'scss/main.scss' %}" rel="stylesheet" type="text/css" />
-</head>
-<body>
-    {% block navbar %}
-        {% include "page/navbar.html" %}
-    {% endblock %}
-
-  <div class="py-20 rounded-lg" style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%)"
+<div class="py-20 rounded-b-lg" style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%)"
     >
       <div class="container mx-auto px-6">
         <h2 class="text-4xl font-bold mb-2 text-white">
           Smart Health Monitoring Wristwatch!
         </h2>
-        <h3 class="text-2xl mb-8 text-gray-200">
+        <h3 class="text-2xl mb-8 text-gray-200 italic">
           Monitor your health vitals smartly anywhere you go.
         </h3>
 
@@ -41,14 +26,14 @@
           <h4 class="text-3xl text-gray-800 font-bold mb-3">Control your health condition</h4>
           <p class="text-gray-600 mb-8">Our Smart Health Monitoring Gadget is able to capture you vitals and, by using some algorithms, they are able to determinate your health status.</p>
         </div>
-        <div class="w-full md:w-1/2">
-          <img src="" alt="Monitoring" />
+        <div class="w-full px-4  md:w-1/2">
+          <img src="{%static "/img/running.png"%}" alt="Monitoring" />
         </div>
       </div>
 
       <div class="flex items-center flex-wrap mb-20">
-        <div class="w-full md:w-1/2">
-          <img src="" alt="Statistics" />
+        <div class="w-full px-4  md:w-1/2">
+          <img src="{%static "/img/analysis.png"%}" alt="Statistics" />
         </div>
         <div class="w-full md:w-1/2 pl-10">
           <h4 class="text-3xl text-gray-800 font-bold mb-3">Statistics</h4>
@@ -61,14 +46,9 @@
           <h4 class="text-3xl text-gray-800 font-bold mb-3">Compete</h4>
           <p class="text-gray-600 mb-8">You can compare your health data with other users of our Gadget. Also, send them to your friends.</p>
         </div>
-        <div class="w-full md:w-1/2">
-          <img src="" alt="Compete" />
+        <div class="w-full px-4 md:w-1/2">
+          <img src="{%static "/img/goals.png"%}" alt="Compete" />
         </div>
       </div>
     </section>
-     {% block footer %}
-        {% include "page/footer.html" %}
-    {% endblock %}
-    <script src="{% static "/js/main.js"%}"></script>
-</body>
-</html>
+{% endblock %}

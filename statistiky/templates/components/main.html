@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+{% load sass_tags %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+
+    <title>Health Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&family=Noto+Serif+Display:ital@1&display=swap" rel="stylesheet">
+
+    <link href="{% sass_src 'scss/main.scss' %}" rel="stylesheet" />
+</head>
+<body>
+    {% block navbar %}
+        {% include "components/navbar.html" %}
+    {% endblock %}
+
+    {% block content %}{% endblock %}
+
+     {% block footer %}
+        {% include "components/footer.html" %}
+    {% endblock %}
+    <script src="{% static "/js/main.js"%}"></script>
+</body>
+</html>

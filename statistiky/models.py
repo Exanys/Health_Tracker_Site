@@ -9,6 +9,8 @@ class Person(models.Model):
     country = models.CharField(max_length=3, null=True, verbose_name='Country')
     email = models.EmailField(unique=True, null=False, verbose_name='Email')
     serial_number = models.CharField(max_length=30, unique=True, null=False, verbose_name='Serial number')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name
@@ -22,6 +24,8 @@ class Temperature(models.Model):
     min_value = models.FloatField(null=False, verbose_name='Min value')
     max_value = models.FloatField(null=False, verbose_name='Max value')
     avarage_value = models.FloatField(null=False, verbose_name='Avarage value')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return 'Temperature'
@@ -34,6 +38,8 @@ class Heart_rate(models.Model):
     min_value = models.IntegerField(null=False, verbose_name='Min value')
     max_value = models.IntegerField(null=False, verbose_name='Max value')
     avarage_value = models.FloatField(null=False, verbose_name='Avarage value')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return 'Heart rate'
@@ -48,6 +54,8 @@ class Sleep(models.Model):
     wake_up_time = models.TimeField(null=False, verbose_name='Wake up time')
     number_of_wake_ups = models.IntegerField(null=False, verbose_name='Number of wake ups')
     deep_sleep = models.FloatField(null=False, verbose_name='Deep sleep')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return 'Sleep'
@@ -63,6 +71,8 @@ class Statistic(models.Model):
     heart_rate = models.ForeignKey(Heart_rate, on_delete=models.CASCADE)
     sleep = models.ForeignKey(Sleep, on_delete=models.CASCADE)
     date = models.DateField(null=False, verbose_name='Date')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return 'Statistic'
