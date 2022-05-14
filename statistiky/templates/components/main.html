@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 {% load sass_tags %}
 {% load static %}
@@ -8,23 +7,26 @@
 
 
     <title>Health Tracker</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="{% static '/js/tailwind.js'%}"></script>
+    <script src="{% static '/js/jquery-3.6.0.min.js'%}"></script>
+    <link href="{% static '/fontAwesome/css/all.css'%}" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&family=Noto+Serif+Display:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&family=Noto+Serif+Display:ital@1&display=swap"
+          rel="stylesheet">
 
-    <link href="{% sass_src 'scss/main.scss' %}" rel="stylesheet" />
+    <link href="{% sass_src 'scss/main.scss' %}" rel="stylesheet"/>
 </head>
 <body>
-    {% block navbar %}
-        {% include "components/navbar.html" %}
-    {% endblock %}
+{% block navbar %}
+{% include "components/navbar.html" %}
+{% endblock %}
 
-    {% block content %}{% endblock %}
+{% block content %}{% endblock %}
 
-     {% block footer %}
-        {% include "components/footer.html" %}
-    {% endblock %}
-    <script src="{% static "/js/main.js"%}"></script>
+{% block footer %}
+{% include "components/footer.html" %}
+{% endblock %}
+<script src="{% static '/js/main.js'%}"></script>
 </body>
 </html>

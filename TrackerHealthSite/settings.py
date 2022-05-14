@@ -58,7 +58,7 @@ ROOT_URLCONF = 'TrackerHealthSite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['statistiky/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -72,7 +72,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'TrackerHealthSite.wsgi.application'
-
+LOGIN_REDIRECT_URL = "/"
 INTERNAL_IPS = [
     "127.0.0.1",
 ]

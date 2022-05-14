@@ -1,11 +1,63 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: 'Inconsolata', monospace !important;
+  font-family: 'Inconsolata', monospace;
   font-weight: 700;
   letter-spacing: 3px; }
 
 body {
   background-color: #eeecec !important; }
+
+.login-form .i {
+  color: #d9d9d9;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.login-form .i i {
+  transition: .3s; }
+
+.login-form .input-div > div {
+  position: relative;
+  height: 45px; }
+
+.login-form .input-div > div > h5 {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 18px;
+  transition: .3s; }
+
+.login-form .input-div:before,
+.login-form .input-div:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: #EF4444;
+  transition: .4s; }
+
+.login-form .input-div:before {
+  right: 50%; }
+
+.login-form .input-div:after {
+  left: 50%; }
+
+.login-form .input-div.focus:before,
+.login-form .input-div.focus:after {
+  width: 50%; }
+
+.login-form .input-div.focus > div > h5 {
+  top: -5px;
+  font-size: 15px; }
+
+.login-form .input-div.focus > .i > i {
+  color: #EF4444; }
+
+.login-form ul {
+  color: #EF4444; }
 
 /*# sourceMappingURL=main.css.map */
